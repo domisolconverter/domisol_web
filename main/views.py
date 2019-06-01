@@ -1,6 +1,7 @@
 from django.shortcuts import render, reverse, HttpResponseRedirect, redirect
 from .forms import UploadFileForm
 from django.http import HttpResponseRedirect
+from .emailThread import *
 
 # Create your views here.
 
@@ -34,5 +35,8 @@ def main(request):
 
 # 소켓 연결해서 로딩화면 띄우면서 서버에 있는 프로그램 돌리고 서버로부터 데이터 받아오는 것이 필요하당
 def process_upload(request):
+
+    send_email('안녕하세요', '내용입니다', 'domisolConverter@gmail.com',
+    ['wkdthf21@gmail.com'],fail_silently = False)
 
     return render(request, 'uploading.html', {})

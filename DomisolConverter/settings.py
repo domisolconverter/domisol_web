@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
-    'edit'
+    'edit',
 ]
 
 MIDDLEWARE = [
@@ -70,6 +70,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'DomisolConverter.wsgi.application'
+
+
+
 
 
 # Database
@@ -128,3 +131,16 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 TEMPLATE_DIRS = (
     os.path.join(SETTINGS_PATH, 'templates'),
 )
+
+# EMAIl
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_USE_TLS =True
+EMAIL_HOST = 'smtp.gmail.com'
+
+EMAIL_HOST_USER = 'domisolConverter@gmail.com'
+EMAIL_HOST_PASSWORD = 'p@ssword1234'
+EMAIL_PORT = 587
+
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
