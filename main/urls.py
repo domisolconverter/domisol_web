@@ -5,5 +5,5 @@ from . import emailThread
 
 urlpatterns = [
     path('', views.main, name='main'),
-    path('uploading/', views.process_upload, name='uploading'),
+    path('uploading/<str:email>', views.process_upload, name='uploading'),
 ]

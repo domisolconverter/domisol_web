@@ -58,7 +58,7 @@ def main(request):
                 # 스레드 실행
                 exe_Converter(fileName, savedLocation, email)
 
-            redirect_to = reverse('uploading')
+            redirect_to = reverse('uploading', kwargs={'email':email})
             return HttpResponseRedirect(redirect_to)
 
         # 파일을 업로드하지 않은 경우
@@ -70,6 +70,6 @@ def main(request):
 
 
 # 소켓 연결해서 로딩화면 띄우면서 서버에 있는 프로그램 돌리고 서버로부터 데이터 받아오는 것이 필요하당
-def process_upload(request):
+def process_upload(request, email):
 
-    return render(request, 'uploading.html', {})
+    return render(request, 'uploading.html', { "email" : email })

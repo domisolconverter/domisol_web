@@ -4,6 +4,7 @@
 {% block content %}
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic|Nanum+Myeongjo|Noto+Sans+KR&display=swap&subset=korean');
   .loader,
   .loader:after {
     border-radius: 50%;
@@ -11,7 +12,7 @@
     height: 10em;
   }
   .loader {
-    margin: 13% auto;
+    margin: 7% auto;
     font-size: 10px;
     position: relative;
     text-indent: -9999em;
@@ -45,10 +46,27 @@
       transform: rotate(360deg);
     }
   }
-
+.TEXT{
+  font-family:'Nanum Myeongjo', serif;
+  font-size:18px;
+  margin-bottom:50px;
+}
 
 </style>
 
 <div class="loader">Loading...</div>
+<div class = "container TEXT">
+  <div class = "row justify-content-md-center">
+    <div class = "col-md-auto">
+       악보 변환 중 입니다.
+    </div>
+  </div>
+  <br/>
+  <div class = "row justify-content-md-center">
+    <div class = "col-md-auto">
+      변환이 완료되면 <strong>{{email}}</strong> 로 전송합니다.
+    </div>
+  </div>
+</div>
 
 {% endblock %}
