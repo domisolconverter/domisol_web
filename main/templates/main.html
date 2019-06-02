@@ -24,12 +24,12 @@
   font-family:'Noto Sans KR', sans-serif;
   font-size:30px;
   margin-bottom:18px;
-  margin-top:13px;
+  margin-top:-10px;
 }
 .intro2{
   font-family:'Nanum Myeongjo', serif;
   font-size:18px;
-  margin-bottom:50px;
+  margin-bottom:30px;
 }
 
 .file{
@@ -45,7 +45,7 @@
   padding: 8px 28px;
   text-align: center;
   font-size: 16px;
-  margin: 10px 2px;
+  margin: 0px 2px;
   opacity: 0.6;
   transition: 0.3s;
   display: inline-block;
@@ -53,6 +53,9 @@
   cursor: pointer;
 }
 .upload_button:hover {opacity: 1}
+
+#fileInput { display:none; }
+
 </style>
 
 <script>
@@ -125,8 +128,6 @@
   <div class = "row justify-content-md-center">
     <div class = "col-md-auto">
       <output id="list"></output>
-      <br>
-      <input type="file" id = "fileInput" name = "uploadedFile" multiple/><br><br>
     </div>
 </div>
 <div class = "container upload_test">
@@ -136,6 +137,7 @@
     </div>
   </div>
 </div>
+<input type="file" id = "fileInput" name = "uploadedFile" multiple/><br><br>
 </form>
 
 <script>
