@@ -56,7 +56,7 @@ def main(request):
                 uploaded_file_url = fs.url(savedFileName)
 
                 # 스레드 실행
-                exe_Converter(fileName, savedLocation, email)
+                exe_Converter(fileName, savedLocation, email, melody)
 
             redirect_to = reverse('uploading', kwargs={'email':email})
             return HttpResponseRedirect(redirect_to)
