@@ -50,7 +50,7 @@ def main(request):
                 fileModel.save()
 
                 # jpg 파일을 서버에 저장
-                savedLocation = 'main/uploadedJPG/'+email
+                savedLocation = 'uploadedJPG/'+email
                 fs = FileSystemStorage(location=savedLocation)
                 savedFileName = fs.save(fileName, file)
                 uploaded_file_url = fs.url(savedFileName)
