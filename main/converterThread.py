@@ -28,8 +28,7 @@ class ConverterThread(threading.Thread):
         input_melody = self.melody
 
         ############ (수정) ###############
-        p = Popen(["test.exe"], shell=True, stdout=PIPE, stdin=PIPE)
-        print(p.stdout.read())
+        p = Popen(["domisolConverter.exe", input_fileName, input_melody], shell=True, stdout=PIPE, stdin=PIPE)
 
         # 원래 파일 삭제
         old_fileName = self.old_path + "/" + self.savedLocation + "/" + self.fileName
