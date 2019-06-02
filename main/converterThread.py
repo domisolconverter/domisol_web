@@ -29,15 +29,15 @@ class ConverterThread(threading.Thread):
 
         ############ (수정) ###############
         p = Popen(["domisolConverter.exe", input_fileName, input_melody], shell=True, stdout=PIPE, stdin=PIPE)
-
+        p.wait()
         # 원래 파일 삭제
-        old_fileName = self.old_path + "/" + self.savedLocation + "/" + self.fileName
-        if os.path.isfile(old_fileName):
-            os.remove(old_fileName)
-            print("변환전 파일 삭제")
+        #old_fileName = self.old_path + "/" + self.savedLocation + "/" + self.fileName
+        #if os.path.isfile(old_fileName):
+        #    os.remove(old_fileName)
+        #    print("변환전 파일 삭제")
 
         # 변환된 파일을 찾기 -> result_파일명.pdf
-        result_path = self.old_path + "/" + self.savedLocation
+        result_path = self.old_path
         new_fileName = self.fileName.replace(".jpg", "")
         new_fileName = result_path + "/result_" + new_fileName + ".pdf"
         if os.path.isfile(new_fileName):
@@ -50,9 +50,9 @@ class ConverterThread(threading.Thread):
         [self.email], fail_silently = False, path=new_fileName)
 
         # 변환된 파일 삭제
-        if os.path.exists(new_fileName):
-            os.remove(new_fileName)
-            print("변환된 파일 삭제")
+        #if os.path.exists(new_fileName):
+        #    os.remove(new_fileName)
+        #    print("변환된 파일 삭제")
 
         print("ConverterThread End !!!")
 
